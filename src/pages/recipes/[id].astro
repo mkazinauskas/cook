@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const recipes = await getCollection('recipes');
+  return recipes.map((recipe) => ({
+    params: { id: recipe.id },
+    props: { recipe },
+  }));
+}
+
+const { recipe } = Astro.props;
+const { Content } = await render(recipe);
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title={`${recipe.data.title} — Cook`} description={recipe.data.description}>
+  <a class="back-link" href={base}>&larr; All recipes</a>
+
+  <article>
+    {recipe.data.image && (
+      <img class="recipe-hero" src={recipe.data.image} alt={recipe.data.title} />
+    )}
+    <header class="recipe-header">
+      <h1>{recipe.data.title}</h1>
+      {recipe.data.description && <p class="recipe-description">{recipe.data.description}</p>}
+    </header>
+
+    <div class="recipe-meta">
+      {recipe.data.prepTime && <span><strong>Prep:</strong> {recipe.data.prepTime}</span>}
+      {recipe.data.cookTime && <span><strong>Cook:</strong> {recipe.data.cookTime}</span>}
+      {recipe.data.servings && <span><strong>Servings:</strong> {recipe.data.servings}</span>}
+    </div>
+
+    <div class="recipe-content">
+      <Content />
+    </div>
+  </article>
+</Layout>
