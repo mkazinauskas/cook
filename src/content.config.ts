@@ -10,7 +10,7 @@ const recipes = defineCollection({
     tags: z.array(z.string()).default([]),
     prepTime: z.string().optional(),
     cookTime: z.string().optional(),
-    servings: z.string().optional(),
+    servings: z.number().int().positive().optional(),
     date: z.coerce.date().optional(),
   }),
 });

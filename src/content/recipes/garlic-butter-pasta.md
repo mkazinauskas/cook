@@ -4,7 +4,7 @@ description: A fast weeknight pasta with a silky garlic butter sauce and parmesa
 tags: [pasta, vegetarian, quick, dinner]
 prepTime: 10 min
 cookTime: 15 min
-servings: "2"
+servings: 2
 date: 2026-01-05
 ---
 

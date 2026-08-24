@@ -4,7 +4,7 @@ description: Naturally sweetened, blender pancakes made with oats and ripe banan
 tags: [breakfast, vegetarian, quick]
 prepTime: 5 min
 cookTime: 15 min
-servings: "2"
+servings: 2
 date: 2026-03-01
 ---
 

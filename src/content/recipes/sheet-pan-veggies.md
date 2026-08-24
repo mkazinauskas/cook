@@ -4,7 +4,7 @@ description: Caramelized, oven-roasted vegetables tossed in olive oil and herbs.
 tags: [vegetarian, vegan, side, quick]
 prepTime: 15 min
 cookTime: 30 min
-servings: "4"
+servings: 4
 date: 2026-02-14
 ---
 

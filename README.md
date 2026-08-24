@@ -15,7 +15,7 @@ description: A one-line summary shown on the homepage.
 tags: [dinner, quick]
 prepTime: 10 min
 cookTime: 20 min
-servings: "4"
+servings: 4
 date: 2026-08-25
 ---
 
@@ -39,7 +39,7 @@ Frontmatter fields:
 | `tags`        | no       | Powers the tag filter on the homepage           |
 | `prepTime`    | no       | Free text, e.g. `10 min`                        |
 | `cookTime`    | no       | Free text                                       |
-| `servings`    | no       | Free text (quote numbers, e.g. `"4"`)           |
+| `servings`    | no       | Whole number, e.g. `4`. Powers a servings slider that scales ingredient quantities |
 | `image`       | no       | Path or URL to a hero image                     |
 | `date`        | no       | Used to sort recipes, newest first              |
 
@@ -56,11 +56,17 @@ npm run dev
 
 Requires Node 22.12+ (Astro will refuse to run on older Node 22.x patch versions).
 
-| Command           | Action                                       |
-| ------------------ | --------------------------------------------- |
-| `npm run dev`      | Start the local dev server                    |
-| `npm run build`    | Build the static site to `./dist/`            |
-| `npm run preview`  | Preview the production build locally          |
+| Command                    | Action                                       |
+| -------------------------- | --------------------------------------------- |
+| `npm run dev`              | Start the local dev server                    |
+| `npm run build`            | Build the static site to `./dist/`            |
+| `npm run preview`          | Preview the production build locally          |
+| `npx astro dev --background` | Start the dev server in the background        |
+| `npx astro dev status`     | Check whether the background dev server is running |
+| `npx astro dev logs`       | View background dev server logs               |
+| `npx astro dev stop`       | Stop the background dev server                |
+
+By default the dev server runs at http://localhost:4321.
 
 ## Deployment (GitHub Pages)
 
@@ -68,4 +74,4 @@ Deployment is handled by [`.github/workflows/deploy.yml`](.github/workflows/depl
 
 One-time setup on GitHub: go to **Settings → Pages** on the repo and set **Source** to **GitHub Actions**.
 
-The site is configured (in [`astro.config.mjs`](astro.config.mjs)) for `https://mkazinauskas.github.io/cook/`. If you rename the repo or move it to a different account, update `site` and `base` there to match.
+The site is configured (in [`astro.config.mjs`](astro.config.mjs)) with `base: '/'`, so it's served from the root of `site`. If you rename the repo, move it to a different account, or deploy as a GitHub Pages project site instead of a root/custom domain, update `site` and `base` there to match.
