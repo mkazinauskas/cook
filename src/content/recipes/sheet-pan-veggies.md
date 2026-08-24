@@ -14,10 +14,11 @@ date: 2026-02-14
 - 1 red onion, cut into wedges
 - 1 zucchini, sliced
 - 1 red bell pepper, cut into chunks
-- 3 tbsp olive oil
-- 1 tsp dried thyme
-- 1 tsp dried oregano
-- Salt and black pepper, to taste
+- 40g olive oil
+- 1g dried thyme
+- 1g dried oregano
+- 5g salt
+- 1g black pepper
 
 ## Instructions
 

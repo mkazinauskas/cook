@@ -239,7 +239,8 @@ main {
   text-decoration: underline;
 }
 
-.servings-control {
+.servings-control,
+.hydration-control {
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -251,16 +252,24 @@ main {
   margin-bottom: 1.5rem;
 }
 
-.servings-control strong {
+.servings-control + .hydration-control {
+  border-top: none;
+  margin-top: -1.5rem;
+}
+
+.servings-control strong,
+.hydration-control strong {
   color: var(--text);
 }
 
-.servings-slider {
+.servings-slider,
+.hydration-slider {
   accent-color: var(--accent);
   width: 140px;
 }
 
-.servings-step {
+.servings-step,
+.hydration-step {
   width: 1.6rem;
   height: 1.6rem;
   line-height: 1;
@@ -276,13 +285,15 @@ main {
   padding: 0;
 }
 
-.servings-step:hover {
+.servings-step:hover,
+.hydration-step:hover {
   border-color: var(--accent);
   color: var(--accent-dark);
 }
 
-.servings-output {
-  min-width: 1.5rem;
+.servings-output,
+.hydration-output {
+  min-width: 2.5rem;
   text-align: center;
   color: var(--text);
   font-weight: 600;

@@ -16,6 +16,10 @@ const base = import.meta.env.BASE_URL;
 
 const servingsNum = recipe.data.servings ?? null;
 const maxServings = servingsNum ? Math.max(servingsNum * 4, 12) : 12;
+
+const hydrationNum = recipe.data.hydration ?? null;
+const minHydration = hydrationNum ? Math.min(50, Math.floor(hydrationNum)) : 50;
+const maxHydration = hydrationNum ? Math.max(90, Math.ceil(hydrationNum)) : 90;
 ---
 
 <Layout title={`${recipe.data.title} — Cook`} description={recipe.data.description}>
@@ -53,13 +57,31 @@ const maxServings = servingsNum ? Math.max(servingsNum * 4, 12) : 12;
       </div>
     )}
 
+    {hydrationNum && (
+      <div class="hydration-control" data-base-hydration={hydrationNum}>
+        <strong>Hydration:</strong>
+        <button type="button" class="hydration-step" data-step="-1" aria-label="Decrease hydration">&minus;</button>
+        <input
+          type="range"
+          class="hydration-slider"
+          min={minHydration}
+          max={maxHydration}
+          step="1"
+          value={hydrationNum}
+          aria-label="Hydration percentage"
+        />
+        <button type="button" class="hydration-step" data-step="1" aria-label="Increase hydration">&plus;</button>
+        <output class="hydration-output">{hydrationNum}%</output>
+      </div>
+    )}
+
     <div class="recipe-content">
       <Content />
     </div>
   </article>
 </Layout>
 
-{servingsNum && (
+{(servingsNum || hydrationNum) && (
   <script>
     function parseQuantity(str: string): number {
       const trimmed = str.trim();
@@ -107,15 +129,6 @@ const maxServings = servingsNum ? Math.max(servingsNum * 4, 12) : 12;
     }
 
     function init() {
-      const control = document.querySelector<HTMLElement>('.servings-control');
-      const slider = document.querySelector<HTMLInputElement>('.servings-slider');
-      const output = document.querySelector<HTMLOutputElement>('.servings-output');
-      const stepButtons = document.querySelectorAll<HTMLButtonElement>('.servings-step');
-      if (!control || !slider || !output) return;
-
-      const baseServings = parseFloat(control.dataset.baseServings ?? '0');
-      if (!baseServings) return;
-
       const heading = Array.from(document.querySelectorAll('.recipe-content h2')).find(
         (h) => h.textContent?.trim().toLowerCase() === 'ingredients'
       );
@@ -130,28 +143,81 @@ const maxServings = servingsNum ? Math.max(servingsNum * 4, 12) : 12;
         return { li, baseQty, whitespace: match[2], suffix: match[3] };
       });
 
-      function update(servings: number) {
-        output.textContent = String(servings);
-        const ratio = servings / baseServings;
-        for (const item of items) {
-          if (!item) continue;
-          const scaled = item.baseQty * ratio;
-          item.li.textContent = `${formatQuantity(scaled)}${item.whitespace}${item.suffix}`;
+      const flourItem = items.find((item) => item && /\bflour\b/i.test(item.suffix));
+      const waterItem = items.find((item) => item && /\bwater\b/i.test(item.suffix));
+
+      let servingsRatio = 1;
+
+      function applyWater(hydrationPercent: number) {
+        if (!waterItem || !flourItem) return;
+        const waterQty = flourItem.baseQty * servingsRatio * (hydrationPercent / 100);
+        waterItem.li.textContent = `${formatQuantity(waterQty)}${waterItem.whitespace}${waterItem.suffix}`;
+      }
+
+      const hydrationSlider = document.querySelector<HTMLInputElement>('.hydration-slider');
+      const hydrationOutput = document.querySelector<HTMLOutputElement>('.hydration-output');
+      const hydrationSteps = document.querySelectorAll<HTMLButtonElement>('.hydration-step');
+
+      function updateHydration(hydrationPercent: number) {
+        if (hydrationOutput) hydrationOutput.textContent = `${hydrationPercent}%`;
+        applyWater(hydrationPercent);
+      }
+
+      function syncWater() {
+        if (hydrationSlider) {
+          applyWater(parseFloat(hydrationSlider.value));
+        } else if (waterItem) {
+          const scaled = waterItem.baseQty * servingsRatio;
+          waterItem.li.textContent = `${formatQuantity(scaled)}${waterItem.whitespace}${waterItem.suffix}`;
         }
       }
 
-      slider.addEventListener('input', () => update(parseFloat(slider.value)));
-      stepButtons.forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const step = parseFloat(btn.dataset.step ?? '0');
-          const next = Math.min(
-            Number(slider.max),
-            Math.max(Number(slider.min), parseFloat(slider.value) + step)
-          );
-          slider.value = String(next);
-          update(next);
+      if (hydrationSlider && hydrationOutput && flourItem && waterItem) {
+        hydrationSlider.addEventListener('input', () => updateHydration(parseFloat(hydrationSlider.value)));
+        hydrationSteps.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const step = parseFloat(btn.dataset.step ?? '0');
+            const next = Math.min(
+              Number(hydrationSlider.max),
+              Math.max(Number(hydrationSlider.min), parseFloat(hydrationSlider.value) + step)
+            );
+            hydrationSlider.value = String(next);
+            updateHydration(next);
+          });
         });
-      });
+      }
+
+      const servingsControl = document.querySelector<HTMLElement>('.servings-control');
+      const servingsSlider = document.querySelector<HTMLInputElement>('.servings-slider');
+      const servingsOutput = document.querySelector<HTMLOutputElement>('.servings-output');
+      const servingsSteps = document.querySelectorAll<HTMLButtonElement>('.servings-step');
+      const baseServings = parseFloat(servingsControl?.dataset.baseServings ?? '0');
+
+      if (servingsControl && servingsSlider && servingsOutput && baseServings) {
+        function update(servings: number) {
+          servingsOutput.textContent = String(servings);
+          servingsRatio = servings / baseServings;
+          for (const item of items) {
+            if (!item || item === waterItem) continue;
+            const scaled = item.baseQty * servingsRatio;
+            item.li.textContent = `${formatQuantity(scaled)}${item.whitespace}${item.suffix}`;
+          }
+          syncWater();
+        }
+
+        servingsSlider.addEventListener('input', () => update(parseFloat(servingsSlider.value)));
+        servingsSteps.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const step = parseFloat(btn.dataset.step ?? '0');
+            const next = Math.min(
+              Number(servingsSlider.max),
+              Math.max(Number(servingsSlider.min), parseFloat(servingsSlider.value) + step)
+            );
+            servingsSlider.value = String(next);
+            update(next);
+          });
+        });
+      }
     }
 
     init();

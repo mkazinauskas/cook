@@ -11,6 +11,7 @@ const recipes = defineCollection({
     prepTime: z.string().optional(),
     cookTime: z.string().optional(),
     servings: z.number().int().positive().optional(),
+    hydration: z.number().positive().optional(),
     date: z.coerce.date().optional(),
   }),
 });

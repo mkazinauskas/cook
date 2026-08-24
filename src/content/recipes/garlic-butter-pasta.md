@@ -11,17 +11,18 @@ date: 2026-01-05
 ## Ingredients
 
 - 200g spaghetti
-- 4 tbsp butter
+- 55 g butter
 - 4 cloves garlic, minced
-- 1/2 tsp chili flakes
-- 1/2 cup grated parmesan
-- Salt and black pepper, to taste
+- 1 g chili flakes
+- 50 g grated parmesan
+- 3g salt
+- 1g black pepper
 - Fresh parsley, chopped, for serving
 
 ## Instructions
 
-1. Bring a large pot of salted water to a boil and cook the spaghetti until al dente. Reserve 1 cup of pasta water before draining.
+1. Bring a large pot of salted water to a boil and cook the spaghetti until al dente. Reserve 250 ml of pasta water before draining.
 2. While the pasta cooks, melt the butter in a large skillet over medium heat. Add the garlic and chili flakes, and cook until fragrant, about 1 minute.
 3. Add the drained pasta to the skillet along with a splash of the reserved pasta water. Toss to coat.
 4. Remove from heat, stir in the parmesan, and add more pasta water as needed to loosen the sauce.
-5. Season with salt and pepper, top with parsley, and serve immediately.
+5. Stir in the salt and pepper, top with parsley, and serve immediately.

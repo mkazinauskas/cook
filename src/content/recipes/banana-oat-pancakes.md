@@ -12,10 +12,10 @@ date: 2026-03-01
 
 - 2 ripe bananas
 - 2 eggs
-- 1 cup rolled oats
-- 1/2 tsp baking powder
-- 1/2 tsp cinnamon
-- Pinch of salt
+- 90 g rolled oats
+- 2 g baking powder
+- 1 g cinnamon
+- 0.5g salt
 - Butter or oil, for the pan
 
 ## Instructions

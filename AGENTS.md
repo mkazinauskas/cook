@@ -8,6 +8,10 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
+## Content conventions
+
+Recipes use European (metric) measuring units — grams (g) and millilitres (ml) for weights and volumes, °C for temperatures. Avoid US units like cups, ounces, pounds, or °F-only temperatures. Small quantities of spices/seasoning may still use tsp/tbsp.
+
 ## Documentation
 
 Full documentation: https://docs.astro.build
