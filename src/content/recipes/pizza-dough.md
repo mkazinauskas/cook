@@ -11,10 +11,10 @@ date: 2026-08-25
 
 ## Ingredients
 
-- 500g 00 flour (at least 12g protein)
-- 325g water
-- 14g salt
-- 1g active dry yeast, or 3g fresh/pressed yeast
+- 600g 00 flour (at least 12g protein)
+- 390g water
+- 17g salt
+- 1.2g active dry yeast, or 4g fresh/pressed yeast
 
 ## Instructions
 
