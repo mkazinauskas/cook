@@ -1,0 +1,26 @@
+[tools]
+node = "22"
+
+[tasks.dev]
+description = "Start the Astro dev server in the background"
+run = "astro dev --background"
+
+[tasks.dev-stop]
+description = "Stop the background Astro dev server"
+run = "astro dev stop"
+
+[tasks.dev-status]
+description = "Show status of the background Astro dev server"
+run = "astro dev status"
+
+[tasks.dev-logs]
+description = "Show logs from the background Astro dev server"
+run = "astro dev logs"
+
+[tasks.build]
+description = "Build the site for production"
+run = "astro build"
+
+[tasks.preview]
+description = "Preview the production build"
+run = "astro preview"
