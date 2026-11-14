@@ -48,7 +48,7 @@ The bread takes two days, but only about 45 minutes of it is hands-on. A typical
 
 ## Notes
 
-The amounts make one loaf of about 1 kg, which suits a large Dutch oven of 24-26 cm (around 5 l). For a smaller 20-22 cm pot, use three quarters of every ingredient (375 g flour).
+The amounts make one loaf of about 1 kg, sized for a Grandfeu 4.7 l round or 5.6 l oval casserole, or any Dutch oven of 24-26 cm (around 5 l). For a smaller 20-22 cm pot, use three quarters of every ingredient (375 g flour).
 
 Check your pot's maximum oven temperature before preheating it empty. Some enamelled pots have lid knobs rated well below 250°C; swap in a metal knob or bake at 230°C throughout with 5 extra minutes uncovered.
 
