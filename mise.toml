@@ -27,3 +27,7 @@ run = "astro build"
 [tasks.preview]
 description = "Preview the production build"
 run = "astro preview"
+
+[tasks.test]
+description = "Run unit tests"
+run = "npm test"
