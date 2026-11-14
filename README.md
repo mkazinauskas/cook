@@ -40,6 +40,7 @@ Frontmatter fields:
 | `prepTime`    | no       | Free text, e.g. `10 min`                        |
 | `cookTime`    | no       | Free text                                       |
 | `servings`    | no       | Whole number, e.g. `4`. Powers a servings slider that scales ingredient quantities |
+| `hydration`   | no       | Dough hydration in percent, e.g. `65`. Powers a slider that sets the water amount as a percentage of the flour; needs one ingredient line mentioning `flour` and one mentioning `water` |
 | `image`       | no       | Path or URL to a hero image                     |
 | `date`        | no       | Used to sort recipes, newest first              |
 
@@ -54,13 +55,15 @@ npm install
 npm run dev
 ```
 
-Requires Node 22.12+ (Astro will refuse to run on older Node 22.x patch versions).
+Uses Node 24, pinned in [`mise.toml`](mise.toml); Astro needs at least Node 22.23.4. With [mise](https://mise.jdx.dev), `mise run <task>` runs the same commands (`dev`, `build`, `preview`, `test`, `check`).
 
 | Command                    | Action                                       |
 | -------------------------- | --------------------------------------------- |
 | `npm run dev`              | Start the local dev server                    |
 | `npm run build`            | Build the static site to `./dist/`            |
 | `npm run preview`          | Preview the production build locally          |
+| `npm test`                 | Run the unit tests (`src/**/*.test.ts`)       |
+| `npm run check`            | Type-check the project with `astro check`     |
 | `npx astro dev --background` | Start the dev server in the background        |
 | `npx astro dev status`     | Check whether the background dev server is running |
 | `npx astro dev logs`       | View background dev server logs               |
@@ -70,8 +73,10 @@ By default the dev server runs at http://localhost:4321.
 
 ## Deployment (GitHub Pages)
 
-Deployment is handled by [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) — it builds the site with Astro and publishes it via GitHub Pages on every push to `main`.
+Deployment is handled by [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) — on every push to `main` it builds the site with Astro, runs the type check and tests, and publishes it via GitHub Pages. A failing check or test stops the deploy.
 
 One-time setup on GitHub: go to **Settings → Pages** on the repo and set **Source** to **GitHub Actions**.
 
-The site is configured (in [`astro.config.mjs`](astro.config.mjs)) with `base: '/'`, so it's served from the root of `site`. If you rename the repo, move it to a different account, or deploy as a GitHub Pages project site instead of a root/custom domain, update `site` and `base` there to match.
+The site is configured (in [`astro.config.ts`](astro.config.ts)) with `site: 'https://mkazinauskas.github.io'` and `base: '/cook/'`, so it's served as a project site under `/cook/`. If you rename the repo, move it to a different account, or deploy to a custom domain, update `site` and `base` there to match.
+
+[Dependabot](.github/dependabot.yml) opens a grouped pull request each week for npm package and GitHub Actions updates.
