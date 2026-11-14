@@ -12,6 +12,8 @@ const recipes = defineCollection({
     prepTime: z.string().optional(),
     cookTime: z.string().optional(),
     servings: z.number().int().positive().optional(),
+    // What the servings slider counts, e.g. "Loaves"; defaults to "Servings".
+    servingsLabel: z.string().optional(),
     hydration: z.number().positive().optional(),
     date: z.coerce.date().optional(),
   }),

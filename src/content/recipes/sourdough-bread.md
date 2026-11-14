@@ -5,6 +5,7 @@ tags: [bread, sourdough, baking, vegetarian]
 prepTime: 45 min (+ 16-22 hr fermenting and proofing)
 cookTime: 45 min (+ 45 min preheating the pot)
 servings: 1
+servingsLabel: Loaves
 hydration: 75
 date: 2026-11-15
 ---

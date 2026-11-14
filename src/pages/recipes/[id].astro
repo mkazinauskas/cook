@@ -15,6 +15,7 @@ const { Content } = await render(recipe);
 const base = import.meta.env.BASE_URL;
 
 const servingsNum = recipe.data.servings ?? null;
+const servingsLabel = recipe.data.servingsLabel ?? 'Servings';
 const maxServings = servingsNum ? Math.max(servingsNum * 4, 12) : 12;
 
 const hydrationNum = recipe.data.hydration ?? null;
@@ -51,8 +52,13 @@ const maxHydration = hydrationNum ? Math.max(90, Math.ceil(hydrationNum)) : 90;
 
     {servingsNum && (
       <div class="servings-control" data-base-servings={servingsNum}>
-        <strong>Servings:</strong>
-        <button type="button" class="servings-step" data-step="-1" aria-label="Decrease servings">
+        <strong>{servingsLabel}:</strong>
+        <button
+          type="button"
+          class="servings-step"
+          data-step="-1"
+          aria-label={`Decrease ${servingsLabel.toLowerCase()}`}
+        >
           &minus;
         </button>
         <input
@@ -62,9 +68,14 @@ const maxHydration = hydrationNum ? Math.max(90, Math.ceil(hydrationNum)) : 90;
           max={maxServings}
           step="1"
           value={servingsNum}
-          aria-label="Servings"
+          aria-label={servingsLabel}
         />
-        <button type="button" class="servings-step" data-step="1" aria-label="Increase servings">
+        <button
+          type="button"
+          class="servings-step"
+          data-step="1"
+          aria-label={`Increase ${servingsLabel.toLowerCase()}`}
+        >
           &plus;
         </button>
         <output class="servings-output">{servingsNum}</output>

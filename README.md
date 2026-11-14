@@ -32,17 +32,18 @@ date: 2026-08-25
 
 Frontmatter fields:
 
-| Field         | Required | Notes                                                                                                 |
-| ------------- | -------- | ----------------------------------------------------------------------------------------------------- |
-| `title`       | yes      |                                                                                                       |
-| `description` | no       | Shown on the recipe card and as page meta text                                                        |
-| `tags`        | no       | Powers the tag filter on the homepage                                                                 |
-| `prepTime`    | no       | Free text, e.g. `10 min`                                                                              |
-| `cookTime`    | no       | Free text                                                                                             |
-| `servings`    | no       | Whole number, e.g. `4`. Powers a servings slider that scales ingredient quantities                    |
-| `hydration`   | no       | Dough hydration in %, e.g. `65`. Powers a slider that sets water as a percentage of flour (see below) |
-| `image`       | no       | Path or URL to a hero image                                                                           |
-| `date`        | no       | Used to sort recipes, newest first                                                                    |
+| Field           | Required | Notes                                                                                                 |
+| --------------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| `title`         | yes      |                                                                                                       |
+| `description`   | no       | Shown on the recipe card and as page meta text                                                        |
+| `tags`          | no       | Powers the tag filter on the homepage                                                                 |
+| `prepTime`      | no       | Free text, e.g. `10 min`                                                                              |
+| `cookTime`      | no       | Free text                                                                                             |
+| `servings`      | no       | Whole number, e.g. `4`. Powers a servings slider that scales ingredient quantities                    |
+| `servingsLabel` | no       | What the servings slider counts, e.g. `Loaves`. Defaults to `Servings`                                |
+| `hydration`     | no       | Dough hydration in %, e.g. `65`. Powers a slider that sets water as a percentage of flour (see below) |
+| `image`         | no       | Path or URL to a hero image                                                                           |
+| `date`          | no       | Used to sort recipes, newest first                                                                    |
 
 The hydration slider needs one ingredient line mentioning `flour` and one mentioning `water`.
 
