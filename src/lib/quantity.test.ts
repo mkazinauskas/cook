@@ -29,6 +29,6 @@ test('parseIngredient splits the leading quantity from the rest', () => {
 });
 
 test('scaling a recipe line round-trips through parse and format', () => {
-  const { baseQty, whitespace, suffix } = parseIngredient('390g water');
+  const { baseQty, whitespace, suffix } = parseIngredient('390g water')!;
   assert.equal(`${formatQuantity(baseQty * (6 / 4))}${whitespace}${suffix}`, '585g water');
 });
