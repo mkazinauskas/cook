@@ -16,7 +16,6 @@ date: 2026-11-15
 - 375 g water, lukewarm (about 27°C)
 - 100 g active sourdough starter (100% hydration, fed 4-12 hours earlier and at its peak)
 - 10 g salt
-- Rice flour, for dusting the banneton
 
 ## Timeline
 
@@ -39,7 +38,7 @@ The bread takes two days, but only about 45 minutes of it is hands-on. A typical
 6. The rise is done when the dough has grown by 50-75%, has a domed, smooth top with bubbles on the sides and jiggles when you shake the bowl. Go by the dough, not the clock: a cooler kitchen takes longer.
 7. Tip the dough onto an unfloured worktop and pre-shape into a loose round with a bench scraper. Rest uncovered 20-30 minutes.
 8. Lightly flour the top, flip it over and shape it to match your pot: a tight round (boule) for a round pot, a short log (batard) for an oval one. Build surface tension by dragging it towards you on the worktop.
-9. Dust a banneton (proofing basket), or a bowl lined with a tea towel, generously with rice flour. Place the dough in seam side up, cover and refrigerate 12-16 hours (up to 48).
+9. Dust a banneton (proofing basket), or a bowl lined with a tea towel, generously with bread flour. Place the dough in seam side up, cover and refrigerate 12-16 hours (up to 48).
 10. Put the Dutch oven with its lid on a rack in the lower third of the oven and heat to 250°C for 45-60 minutes, so the cast iron is fully heated through.
 11. Turn the cold dough straight out of the fridge onto a piece of baking paper and slash (score) the top in one confident stroke about 1 cm deep with a razor blade or very sharp knife.
 12. Carefully take the pot out, lower the dough in using the paper as a sling, put the lid back on and bake 20 minutes at 250°C.
