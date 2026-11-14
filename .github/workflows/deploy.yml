@@ -25,6 +25,9 @@ jobs:
         uses: withastro/action@v6
 
       # Uses the Node that withastro/action set up; a failure here blocks the deploy job.
+      - name: Type check
+        run: npm run check
+
       - name: Test
         run: npm test
 
