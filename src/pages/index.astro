@@ -23,9 +23,13 @@ const base = import.meta.env.BASE_URL;
     />
     {allTags.length > 0 && (
       <div class="tag-filters" id="tag-filters">
-        <button class="tag-btn active" data-tag="all">All</button>
+        <button class="tag-btn active" data-tag="all">
+          All
+        </button>
         {allTags.map((tag) => (
-          <button class="tag-btn" data-tag={tag}>{tag}</button>
+          <button class="tag-btn" data-tag={tag}>
+            {tag}
+          </button>
         ))}
       </div>
     )}
@@ -54,7 +58,9 @@ const base = import.meta.env.BASE_URL;
     ))}
   </div>
 
-  <p class="empty-state" id="empty-state" hidden>No recipes match your search.</p>
+  <p class="empty-state" id="empty-state" hidden>
+    No recipes match your search.
+  </p>
 </Layout>
 
 <script>

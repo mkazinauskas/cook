@@ -22,9 +22,21 @@ test('formatQuantity prints whole numbers, kitchen fractions or decimals', () =>
 });
 
 test('parseIngredient splits the leading quantity from the rest', () => {
-  assert.deepEqual(parseIngredient('600g 00 flour'), { baseQty: 600, whitespace: '', suffix: 'g 00 flour' });
-  assert.deepEqual(parseIngredient('1 1/2 tsp salt'), { baseQty: 1.5, whitespace: ' ', suffix: 'tsp salt' });
-  assert.deepEqual(parseIngredient('1/2 lemon'), { baseQty: 0.5, whitespace: ' ', suffix: 'lemon' });
+  assert.deepEqual(parseIngredient('600g 00 flour'), {
+    baseQty: 600,
+    whitespace: '',
+    suffix: 'g 00 flour',
+  });
+  assert.deepEqual(parseIngredient('1 1/2 tsp salt'), {
+    baseQty: 1.5,
+    whitespace: ' ',
+    suffix: 'tsp salt',
+  });
+  assert.deepEqual(parseIngredient('1/2 lemon'), {
+    baseQty: 0.5,
+    whitespace: ' ',
+    suffix: 'lemon',
+  });
   assert.equal(parseIngredient('Salt to taste'), null);
 });
 

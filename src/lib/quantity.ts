@@ -22,7 +22,14 @@ export function formatQuantity(value: number): string {
   }
 
   const fractions: [number, number][] = [
-    [1, 8], [1, 4], [1, 3], [1, 2], [2, 3], [3, 4], [5, 8], [7, 8],
+    [1, 8],
+    [1, 4],
+    [1, 3],
+    [1, 2],
+    [2, 3],
+    [3, 4],
+    [5, 8],
+    [7, 8],
   ];
   let best: [number, number] | null = null;
   let bestDiff = Infinity;

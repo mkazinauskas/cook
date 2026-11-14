@@ -32,17 +32,17 @@ date: 2026-08-25
 
 Frontmatter fields:
 
-| Field         | Required | Notes                                          |
-| ------------- | -------- | ----------------------------------------------- |
-| `title`       | yes      |                                                  |
-| `description` | no       | Shown on the recipe card and as page meta text |
-| `tags`        | no       | Powers the tag filter on the homepage           |
-| `prepTime`    | no       | Free text, e.g. `10 min`                        |
-| `cookTime`    | no       | Free text                                       |
-| `servings`    | no       | Whole number, e.g. `4`. Powers a servings slider that scales ingredient quantities |
+| Field         | Required | Notes                                                                                                                                                                                   |
+| ------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `title`       | yes      |                                                                                                                                                                                         |
+| `description` | no       | Shown on the recipe card and as page meta text                                                                                                                                          |
+| `tags`        | no       | Powers the tag filter on the homepage                                                                                                                                                   |
+| `prepTime`    | no       | Free text, e.g. `10 min`                                                                                                                                                                |
+| `cookTime`    | no       | Free text                                                                                                                                                                               |
+| `servings`    | no       | Whole number, e.g. `4`. Powers a servings slider that scales ingredient quantities                                                                                                      |
 | `hydration`   | no       | Dough hydration in percent, e.g. `65`. Powers a slider that sets the water amount as a percentage of the flour; needs one ingredient line mentioning `flour` and one mentioning `water` |
-| `image`       | no       | Path or URL to a hero image                     |
-| `date`        | no       | Used to sort recipes, newest first              |
+| `image`       | no       | Path or URL to a hero image                                                                                                                                                             |
+| `date`        | no       | Used to sort recipes, newest first                                                                                                                                                      |
 
 Everything below the frontmatter is regular markdown and becomes the recipe body — headings, lists, whatever you need.
 
@@ -57,17 +57,17 @@ npm run dev
 
 Uses Node 24, pinned in [`mise.toml`](mise.toml); Astro needs at least Node 22.23.4. With [mise](https://mise.jdx.dev), `mise run <task>` runs the same commands (`dev`, `build`, `preview`, `test`, `check`).
 
-| Command                    | Action                                       |
-| -------------------------- | --------------------------------------------- |
-| `npm run dev`              | Start the local dev server                    |
-| `npm run build`            | Build the static site to `./dist/`            |
-| `npm run preview`          | Preview the production build locally          |
-| `npm test`                 | Run the unit tests (`src/**/*.test.ts`)       |
-| `npm run check`            | Type-check the project with `astro check`     |
-| `npx astro dev --background` | Start the dev server in the background        |
-| `npx astro dev status`     | Check whether the background dev server is running |
-| `npx astro dev logs`       | View background dev server logs               |
-| `npx astro dev stop`       | Stop the background dev server                |
+| Command                      | Action                                             |
+| ---------------------------- | -------------------------------------------------- |
+| `npm run dev`                | Start the local dev server                         |
+| `npm run build`              | Build the static site to `./dist/`                 |
+| `npm run preview`            | Preview the production build locally               |
+| `npm test`                   | Run the unit tests (`src/**/*.test.ts`)            |
+| `npm run check`              | Type-check the project with `astro check`          |
+| `npx astro dev --background` | Start the dev server in the background             |
+| `npx astro dev status`       | Check whether the background dev server is running |
+| `npx astro dev logs`         | View background dev server logs                    |
+| `npx astro dev stop`         | Stop the background dev server                     |
 
 By default the dev server runs at http://localhost:4321.
 
