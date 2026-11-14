@@ -35,3 +35,11 @@ run = "npm test"
 [tasks.check]
 description = "Type-check the project"
 run = "astro check"
+
+[tasks.format]
+description = "Format all files with Prettier"
+run = "prettier --write ."
+
+[tasks.format-check]
+description = "Check formatting with Prettier"
+run = "prettier --check ."
