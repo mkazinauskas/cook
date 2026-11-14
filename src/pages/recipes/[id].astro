@@ -148,7 +148,8 @@ const maxHydration = hydrationNum ? Math.max(90, Math.ceil(hydrationNum)) : 90;
       const baseServings = parseFloat(servingsControl?.dataset.baseServings ?? '0');
 
       if (servingsControl && servingsSlider && servingsOutput && baseServings) {
-        function update(servings: number) {
+        // Arrow function so the null check above still applies inside it.
+        const update = (servings: number) => {
           servingsOutput.textContent = String(servings);
           servingsRatio = servings / baseServings;
           for (const item of items) {
@@ -157,7 +158,7 @@ const maxHydration = hydrationNum ? Math.max(90, Math.ceil(hydrationNum)) : 90;
             item.li.textContent = `${formatQuantity(scaled)}${item.whitespace}${item.suffix}`;
           }
           syncWater();
-        }
+        };
 
         servingsSlider.addEventListener('input', () => update(parseFloat(servingsSlider.value)));
         servingsSteps.forEach((btn) => {
