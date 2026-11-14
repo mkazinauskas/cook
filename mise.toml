@@ -1,6 +1,9 @@
 [tools]
 node = "24"
 
+[env]
+_.path = ["./node_modules/.bin"]
+
 [tasks.dev]
 description = "Start the Astro dev server in the background"
 run = "astro dev --background"
