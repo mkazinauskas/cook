@@ -8,7 +8,7 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
-Write all code in TypeScript. Before committing, run `npm run check` and `npm test`; CI runs both and blocks the deploy if either fails.
+Write all code in TypeScript. Before committing, run `npm run format`, `npm run check` and `npm test`; CI checks formatting, types and tests and blocks the deploy if any of them fails.
 
 ## Content conventions
 

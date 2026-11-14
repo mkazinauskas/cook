@@ -32,17 +32,19 @@ date: 2026-08-25
 
 Frontmatter fields:
 
-| Field         | Required | Notes                                                                                                                                                                                   |
-| ------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title`       | yes      |                                                                                                                                                                                         |
-| `description` | no       | Shown on the recipe card and as page meta text                                                                                                                                          |
-| `tags`        | no       | Powers the tag filter on the homepage                                                                                                                                                   |
-| `prepTime`    | no       | Free text, e.g. `10 min`                                                                                                                                                                |
-| `cookTime`    | no       | Free text                                                                                                                                                                               |
-| `servings`    | no       | Whole number, e.g. `4`. Powers a servings slider that scales ingredient quantities                                                                                                      |
-| `hydration`   | no       | Dough hydration in percent, e.g. `65`. Powers a slider that sets the water amount as a percentage of the flour; needs one ingredient line mentioning `flour` and one mentioning `water` |
-| `image`       | no       | Path or URL to a hero image                                                                                                                                                             |
-| `date`        | no       | Used to sort recipes, newest first                                                                                                                                                      |
+| Field         | Required | Notes                                                                                                 |
+| ------------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| `title`       | yes      |                                                                                                       |
+| `description` | no       | Shown on the recipe card and as page meta text                                                        |
+| `tags`        | no       | Powers the tag filter on the homepage                                                                 |
+| `prepTime`    | no       | Free text, e.g. `10 min`                                                                              |
+| `cookTime`    | no       | Free text                                                                                             |
+| `servings`    | no       | Whole number, e.g. `4`. Powers a servings slider that scales ingredient quantities                    |
+| `hydration`   | no       | Dough hydration in %, e.g. `65`. Powers a slider that sets water as a percentage of flour (see below) |
+| `image`       | no       | Path or URL to a hero image                                                                           |
+| `date`        | no       | Used to sort recipes, newest first                                                                    |
+
+The hydration slider needs one ingredient line mentioning `flour` and one mentioning `water`.
 
 Everything below the frontmatter is regular markdown and becomes the recipe body — headings, lists, whatever you need.
 
@@ -55,7 +57,7 @@ npm install
 npm run dev
 ```
 
-Uses Node 24, pinned in [`mise.toml`](mise.toml); Astro needs at least Node 22.23.4. With [mise](https://mise.jdx.dev), `mise run <task>` runs the same commands (`dev`, `build`, `preview`, `test`, `check`).
+Uses Node 24, pinned in [`mise.toml`](mise.toml); Astro needs at least Node 22.23.4. With [mise](https://mise.jdx.dev), `mise run <task>` runs the same commands (`dev`, `build`, `preview`, `test`, `check`, `format`, `format-check`).
 
 | Command                      | Action                                             |
 | ---------------------------- | -------------------------------------------------- |
@@ -64,6 +66,8 @@ Uses Node 24, pinned in [`mise.toml`](mise.toml); Astro needs at least Node 22.2
 | `npm run preview`            | Preview the production build locally               |
 | `npm test`                   | Run the unit tests (`src/**/*.test.ts`)            |
 | `npm run check`              | Type-check the project with `astro check`          |
+| `npm run format`             | Format all files with Prettier                     |
+| `npm run format:check`       | Check formatting without changing files            |
 | `npx astro dev --background` | Start the dev server in the background             |
 | `npx astro dev status`       | Check whether the background dev server is running |
 | `npx astro dev logs`         | View background dev server logs                    |
@@ -73,7 +77,7 @@ By default the dev server runs at http://localhost:4321.
 
 ## Deployment (GitHub Pages)
 
-Deployment is handled by [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) — on every push to `main` it builds the site with Astro, runs the type check and tests, and publishes it via GitHub Pages. A failing check or test stops the deploy.
+Deployment is handled by [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) — on every push to `main` it first checks formatting, types and tests, then builds the site with Astro and publishes it via GitHub Pages. If any check fails, nothing is built or released.
 
 One-time setup on GitHub: go to **Settings → Pages** on the repo and set **Source** to **GitHub Actions**.
 
