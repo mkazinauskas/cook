@@ -8,6 +8,8 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
+Write all code in TypeScript. Before committing, run `npm run check` and `npm test`; CI runs both and blocks the deploy if either fails.
+
 ## Content conventions
 
 Recipes use European (metric) measuring units — grams (g) and millilitres (ml) for weights and volumes, °C for temperatures. Avoid US units like cups, ounces, pounds, or °F-only temperatures. Small quantities of spices/seasoning may still use tsp/tbsp.
