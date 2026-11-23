@@ -16,16 +16,16 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
-    "astro": "^7.4.12"
+    "astro": "^7.4.13"
   },
   "allowScripts": {
     "esbuild": true
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
-    "@types/node": "^24.19.2",
+    "@types/node": "^26.6.6",
     "prettier": "3.10.1",
     "prettier-plugin-astro": "1.1.2",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   }
 }
