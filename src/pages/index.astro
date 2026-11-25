@@ -13,6 +13,11 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Cook — Recipes">
+  <section class="hero">
+    <h1>What are we cooking?</h1>
+    <p>{allRecipes.length} recipes in metric units, scaled to however many you're feeding.</p>
+  </section>
+
   <div class="controls">
     <input
       type="search"
@@ -46,7 +51,7 @@ const base = import.meta.env.BASE_URL;
       >
         {recipe.data.image && <img src={recipe.data.image} alt={recipe.data.title} />}
         <div class="recipe-card-body">
-          <h3>{recipe.data.title}</h3>
+          <h2>{recipe.data.title}</h2>
           {recipe.data.description && <p>{recipe.data.description}</p>}
           <div class="recipe-card-tags">
             {recipe.data.tags.map((tag) => (

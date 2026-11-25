@@ -20,10 +20,12 @@ const { title, description = 'A collection of recipes, managed as markdown files
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href={import.meta.env.BASE_URL}>
-        🍳 Cook
-      </a>
-      <p class="tagline">Recipes, kept as markdown</p>
+      <div class="site-header-inner">
+        <a class="brand" href={import.meta.env.BASE_URL}>
+          🍳 Cook
+        </a>
+        <p class="tagline">Recipes, kept as markdown</p>
+      </div>
     </header>
     <main>
       <slot />

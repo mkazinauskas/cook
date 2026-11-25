@@ -24,11 +24,11 @@ const maxHydration = hydrationNum ? Math.max(90, Math.ceil(hydrationNum)) : 90;
 ---
 
 <Layout title={`${recipe.data.title} — Cook`} description={recipe.data.description}>
-  <a class="back-link" href={base}>
-    &larr; All recipes
-  </a>
-
   <article>
+    <a class="back-link" href={base}>
+      &larr; All recipes
+    </a>
+
     {recipe.data.image && (
       <img class="recipe-hero" src={recipe.data.image} alt={recipe.data.title} />
     )}
@@ -50,57 +50,71 @@ const maxHydration = hydrationNum ? Math.max(90, Math.ceil(hydrationNum)) : 90;
       )}
     </div>
 
-    {servingsNum && (
-      <div class="servings-control" data-base-servings={servingsNum}>
-        <strong>{servingsLabel}:</strong>
-        <button
-          type="button"
-          class="servings-step"
-          data-step="-1"
-          aria-label={`Decrease ${servingsLabel.toLowerCase()}`}
-        >
-          &minus;
-        </button>
-        <input
-          type="range"
-          class="servings-slider"
-          min="1"
-          max={maxServings}
-          step="1"
-          value={servingsNum}
-          aria-label={servingsLabel}
-        />
-        <button
-          type="button"
-          class="servings-step"
-          data-step="1"
-          aria-label={`Increase ${servingsLabel.toLowerCase()}`}
-        >
-          &plus;
-        </button>
-        <output class="servings-output">{servingsNum}</output>
-      </div>
-    )}
+    {(servingsNum || hydrationNum) && (
+      <div class="recipe-controls">
+        {servingsNum && (
+          <div class="servings-control" data-base-servings={servingsNum}>
+            <strong>{servingsLabel}:</strong>
+            <button
+              type="button"
+              class="servings-step"
+              data-step="-1"
+              aria-label={`Decrease ${servingsLabel.toLowerCase()}`}
+            >
+              &minus;
+            </button>
+            <input
+              type="range"
+              class="servings-slider"
+              min="1"
+              max={maxServings}
+              step="1"
+              value={servingsNum}
+              aria-label={servingsLabel}
+            />
+            <button
+              type="button"
+              class="servings-step"
+              data-step="1"
+              aria-label={`Increase ${servingsLabel.toLowerCase()}`}
+            >
+              &plus;
+            </button>
+            <output class="servings-output">{servingsNum}</output>
+          </div>
+        )}
 
-    {hydrationNum && (
-      <div class="hydration-control" data-base-hydration={hydrationNum}>
-        <strong>Hydration:</strong>
-        <button type="button" class="hydration-step" data-step="-1" aria-label="Decrease hydration">
-          &minus;
-        </button>
-        <input
-          type="range"
-          class="hydration-slider"
-          min={minHydration}
-          max={maxHydration}
-          step="1"
-          value={hydrationNum}
-          aria-label="Hydration percentage"
-        />
-        <button type="button" class="hydration-step" data-step="1" aria-label="Increase hydration">
-          &plus;
-        </button>
-        <output class="hydration-output">{hydrationNum}%</output>
+        {hydrationNum && (
+          <div class="hydration-control" data-base-hydration={hydrationNum}>
+            <strong>Hydration:</strong>
+            <button
+              type="button"
+              class="hydration-step"
+              data-step="-1"
+              aria-label="Decrease hydration"
+            >
+              &minus;
+            </button>
+            <input
+              type="range"
+              class="hydration-slider"
+              min={minHydration}
+              max={maxHydration}
+              step="1"
+              value={hydrationNum}
+              aria-label="Hydration percentage"
+            />
+            <button
+              type="button"
+              class="hydration-step"
+              data-step="1"
+              aria-label="Increase hydration"
+            >
+              &plus;
+            </button>
+            <output class="hydration-output">{hydrationNum}%</output>
+          </div>
+        )}
       </div>
     )}
 
