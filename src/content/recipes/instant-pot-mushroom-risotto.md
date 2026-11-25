@@ -12,18 +12,20 @@ Adapted for the Instant Pot from [Grybų risotto](https://italiskakrautuvele.lt/
 
 ## Ingredients
 
-- 20 ml extra virgin olive oil, plus extra for serving
+- 18 g extra virgin olive oil, plus extra for serving
 - 100 g onion, finely chopped
 - 200 g mushrooms, sliced
-- 1 clove garlic, minced
-- 3 sprigs fresh thyme, plus extra for serving
+- 5 g garlic (1 clove), minced
+- 3 g fresh thyme sprigs, plus extra for serving
 - 50 g butter
 - 200 g risotto rice (Vialone Nano or Carnaroli), not rinsed
-- 100 ml dry white wine
-- 500 ml hot chicken broth (or vegetable broth), plus about 100 ml extra for loosening
+- 100 g dry white wine
+- 500 g hot chicken broth (or vegetable broth)
+- 100 g extra hot broth, for loosening
 - 30 g parmesan, finely grated
 - 10 g fresh parsley, chopped
-- Salt and black pepper, to taste
+- 3 g salt, or to taste
+- 1 g black pepper
 
 ## Instructions
 
@@ -31,7 +33,7 @@ Adapted for the Instant Pot from [Grybų risotto](https://italiskakrautuvele.lt/
 2. Add the mushrooms, garlic and thyme. Season with salt and pepper and cook until the mushrooms have released their liquid and most of it has evaporated, about 5 minutes. Stir in the butter.
 3. Add the rice and stir for 1–2 minutes, until the grains are coated and turn translucent at the edges.
 4. Pour in the wine. Scrape up any browned bits from the bottom and let the wine evaporate almost completely, about 2 minutes. Cancel Sauté.
-5. Pour in the 500 ml of hot broth and stir once, making sure no rice is stuck to the bottom or sides above the liquid.
+5. Pour in the 500 g of hot broth and stir once, making sure no rice is stuck to the bottom or sides above the liquid.
 6. Seal the lid and set the valve to sealing. Pressure Cook on high for 5 minutes.
 7. Quick release the pressure right away and open the lid. The risotto will look soupy at first.
 8. Remove the thyme stems. Stir vigorously for 1–2 minutes until creamy, then stir in the parmesan and most of the parsley.
