@@ -212,10 +212,12 @@ main {
     border-color 0.2s ease;
 }
 
-.recipe-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
-  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+@media (hover: hover) {
+  .recipe-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+  }
 }
 
 .recipe-card img {
@@ -476,9 +478,69 @@ article {
     scrollbar-width: none;
   }
 
+  /* Label and value on one line, then a full-width slider between the step buttons. */
+  .servings-control,
+  .hydration-control {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      'label label value'
+      'minus slider plus';
+    row-gap: 0.25rem;
+  }
+
   .servings-control strong,
   .hydration-control strong {
-    min-width: 0;
+    grid-area: label;
+  }
+
+  .servings-output,
+  .hydration-output {
+    grid-area: value;
+  }
+
+  [data-step='-1'] {
+    grid-area: minus;
+  }
+
+  [data-step='1'] {
+    grid-area: plus;
+  }
+
+  .servings-slider,
+  .hydration-slider {
+    grid-area: slider;
+  }
+}
+
+/* Touch screens: grow tap targets to about 44px. */
+@media (pointer: coarse) {
+  .brand,
+  .back-link {
+    padding: 0.6rem 0;
+  }
+
+  .site-header-inner {
+    padding-block: 0.25rem;
+  }
+
+  .back-link {
+    margin-bottom: 1rem;
+  }
+
+  .tag-btn {
+    padding: 0.6rem 1rem;
+  }
+
+  .servings-step,
+  .hydration-step {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .servings-slider,
+  .hydration-slider {
+    height: 2.75rem;
   }
 }
 
