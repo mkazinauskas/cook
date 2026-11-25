@@ -24,7 +24,7 @@ Adapted for the Instant Pot from [Grybų risotto](https://italiskakrautuvele.lt/
 - 100 ml extra hot broth, for loosening
 - 30 g parmesan, finely grated
 - 10 g fresh parsley, chopped
-- 3 g salt, or to taste
+- 3 g salt (7 g if the broth is unsalted)
 - 1 g black pepper
 
 ## Instructions
